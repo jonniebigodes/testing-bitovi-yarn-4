@@ -19,11 +19,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      # Enable the steps below if you're working with Corepack's supported package managers (e.g. Yarn 2+, pnpm)
       - name: Enable Corepack
         run: corepack enable
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      #
       - run: yarn install
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
